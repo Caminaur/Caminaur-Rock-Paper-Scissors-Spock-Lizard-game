@@ -1,0 +1,166 @@
+.container {
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  max-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.optionContainer {
+  height: 300px;
+  width: 300px;
+  background-image: url("./bg-pentagon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+  position: relative;
+}
+
+.option {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px 7px 1px 0px #bdc2d5;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.option img {
+  height: 60px;
+  width: 60px;
+}
+
+.option::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 145px;
+  width: 145px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 1;
+}
+
+.option[data-option="paper"]:after {
+  background: linear-gradient(
+    var(--gradient-paper-start),
+    var(--gradient-paper-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-paper-hsl), 0.9);
+}
+
+.option[data-option="spock"]:after {
+  background: linear-gradient(
+    var(--gradient-spock-start),
+    var(--gradient-spock-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-spock-hsl), 0.9);
+}
+
+.option[data-option="scissors"]:after {
+  background: linear-gradient(
+    var(--gradient-scissors-start),
+    var(--gradient-scissors-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-scissors-hsl), 0.9);
+}
+.option[data-option="lizard"]:after {
+  background: linear-gradient(
+    var(--gradient-lizard-start),
+    var(--gradient-lizard-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-lizard-hsl), 0.9);
+}
+
+.option[data-option="rock"]:after {
+  background: linear-gradient(
+    var(--gradient-rock-start),
+    var(--gradient-rock-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-rock-hsl), 0.9);
+}
+
+.option[data-option="spock"] {
+  position: absolute;
+  left: -60px;
+  top: 35px;
+}
+.option[data-option="scissors"] {
+  position: absolute;
+  right: 80px;
+  top: -80px;
+}
+
+.option[data-option="rock"] {
+  position: absolute;
+  right: -15px;
+  bottom: -50px;
+}
+.option[data-option="paper"] {
+  position: absolute;
+  right: -60px;
+  top: 35px;
+}
+.option[data-option="lizard"] {
+  position: absolute;
+  left: -15px;
+  bottom: -50px;
+}
+
+@media (max-width: 540px) {
+  .option img {
+    height: 60px;
+    width: 60px;
+  }
+  .option {
+    height: 100px;
+    width: 100px;
+  }
+  .option::after {
+    height: 140px;
+    width: 140px;
+  }
+}
+@media (max-width: 400px) {
+  .optionContainer {
+    width: 230px;
+    height: 230px;
+  }
+
+  .option img {
+    height: 50px;
+    width: 50px;
+  }
+  .option {
+    height: 75px;
+    width: 75px;
+  }
+  .option::after {
+    height: 100px;
+    width: 100px;
+  }
+  .option[data-option="scissors"] {
+    right: 55px;
+    top: -65px;
+  }
+  .option[data-option="paper"] {
+    right: -40px;
+  }
+  .option[data-option="spock"] {
+    left: -40px;
+  }
+  .option[data-option="lizard"] {
+    left: 0;
+  }
+  .option[data-option="rock"] {
+    right: 0;
+  }
+}

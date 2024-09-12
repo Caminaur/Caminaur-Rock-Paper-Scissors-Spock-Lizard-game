@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+  max-width: 650px;
+  height: 100%;
+  max-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.optionContainer {
+  height: 300px;
+  width: 300px;
+  background-image: url("./bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+  position: relative;
+}
+
+.option {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px 7px 1px 0px #bdc2d5;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.option img {
+  height: 80px;
+  width: 80px;
+}
+
+.option::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 195px;
+  width: 195px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 1;
+}
+
+.option[data-option="paper"]:after {
+  background: linear-gradient(
+    var(--gradient-paper-start),
+    var(--gradient-paper-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-paper-hsl), 0.9);
+}
+.option[data-option="scissors"]:after {
+  background: linear-gradient(
+    var(--gradient-scissors-start),
+    var(--gradient-scissors-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-scissors-hsl), 0.9);
+}
+
+.option[data-option="rock"]:after {
+  background: linear-gradient(
+    var(--gradient-rock-start),
+    var(--gradient-rock-end)
+  );
+  box-shadow: 0 8px 0 -2px hsla(var(--gradient-rock-hsl), 0.9);
+}
+
+.option:nth-child(1) {
+  position: absolute;
+  left: -90px;
+  top: -90px;
+}
+.option:nth-child(2) {
+  position: absolute;
+  right: -90px;
+  top: -90px;
+}
+.option:nth-child(3) {
+  position: absolute;
+  left: 17%;
+  bottom: -50px;
+}
+
+@media (max-width: 540px) {
+  .option img {
+    height: 60px;
+    width: 60px;
+  }
+  .option {
+    height: 100px;
+    width: 100px;
+  }
+  .option::after {
+    height: 140px;
+    width: 140px;
+  }
+  .option:nth-child(1) {
+    position: absolute;
+    left: -30px;
+    top: -55px;
+  }
+  .option:nth-child(2) {
+    position: absolute;
+    right: -30px;
+    top: -55px;
+  }
+  .option:nth-child(3) {
+    position: absolute;
+    left: 27%;
+    bottom: 0;
+  }
+}
+@media (max-width: 400px) {
+  .optionContainer {
+    width: 230px;
+    height: 230px;
+  }
+
+  .option img {
+    height: 50px;
+    width: 50px;
+  }
+  .option {
+    height: 85px;
+    width: 85px;
+  }
+  .option::after {
+    height: 110px;
+    width: 110px;
+  }
+}
