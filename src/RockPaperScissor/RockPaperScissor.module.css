@@ -12,7 +12,7 @@
 .optionContainer {
   height: 300px;
   width: 300px;
-  background-image: url("./bg-triangle.svg");
+  background-image: url("bg-triangle.svg");
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 2;
